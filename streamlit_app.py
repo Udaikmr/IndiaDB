@@ -26,7 +26,7 @@ def display_map(df, year, crop, season):
     map = folium.Map(location=[20,80], zoom_start=4, scrollWheelZoom=False, tiles='CartoDB positron')
 
     choropleth = folium.Choropleth(
-        geo_data = 'C:/Users/Udai/StreamlitApp/data/states_india.geojson',
+        geo_data = 'data/states_india.geojson',
         data = df,
         columns=('State', 'Yield'),
         key_on= 'feature.properties.st_nm',
@@ -73,10 +73,10 @@ def main():
     st.caption(APP_SUB_TITLE)
 
     #LOAD DATA
-    df_country = pd.read_csv('C:/Users/Udai/StreamlitApp/data/Indiad.csv')   
-    df_area = pd.read_csv('C:/Users/Udai/StreamlitApp/data/Indiad.csv')
-    df_prod = pd.read_csv('C:/Users/Udai/StreamlitApp/data/Indiad.csv')
-    df = pd.read_csv('C:/Users/Udai/StreamlitApp/data/Indiad.csv')
+    df_country = pd.read_csv('data/Indiad.csv')   
+    df_area = pd.read_csv('data/Indiad.csv')
+    df_prod = pd.read_csv('data/Indiad.csv')
+    df = pd.read_csv('data/Indiad.csv')
 
     field_name = 'Yield'
     crop = 'Rice'
